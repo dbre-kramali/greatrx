@@ -1,0 +1,53 @@
+<svg width="700" height="480" viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="480" fill="#ffffff"/>
+
+  <text x="350" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#111827">Data quality &amp; readiness increases →</text>
+
+  <!-- Bronze -->
+  <rect x="30" y="70" width="180" height="320" rx="10" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <circle cx="120" cy="110" r="7" fill="#b45309"/>
+  <text x="120" y="140" text-anchor="middle" font-size="18" font-weight="600" fill="#111827">Bronze</text>
+  <text x="120" y="164" text-anchor="middle" font-size="13" fill="#6b7280">Raw, unfiltered</text>
+  <text x="120" y="200" text-anchor="middle" font-size="13" fill="#6b7280">Exact copy of</text>
+  <text x="120" y="218" text-anchor="middle" font-size="13" fill="#6b7280">source data</text>
+  <text x="120" y="252" text-anchor="middle" font-size="13" fill="#6b7280">May contain</text>
+  <text x="120" y="270" text-anchor="middle" font-size="13" fill="#6b7280">duplicates, errors</text>
+  <text x="120" y="304" text-anchor="middle" font-size="13" fill="#6b7280">Full history kept</text>
+  <text x="120" y="322" text-anchor="middle" font-size="13" fill="#6b7280">as a safety net</text>
+
+  <line x1="215" y1="230" x2="255" y2="230" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Silver -->
+  <rect x="260" y="70" width="180" height="320" rx="10" fill="#eff6ff" stroke="#dbeafe" stroke-width="1"/>
+  <circle cx="350" cy="110" r="7" fill="#94a3b8"/>
+  <text x="350" y="140" text-anchor="middle" font-size="18" font-weight="600" fill="#111827">Silver</text>
+  <text x="350" y="164" text-anchor="middle" font-size="13" fill="#6b7280">Cleaned &amp; joined</text>
+  <text x="350" y="200" text-anchor="middle" font-size="13" fill="#6b7280">Duplicates removed,</text>
+  <text x="350" y="218" text-anchor="middle" font-size="13" fill="#6b7280">bad rows filtered</text>
+  <text x="350" y="252" text-anchor="middle" font-size="13" fill="#6b7280">Tables joined into</text>
+  <text x="350" y="270" text-anchor="middle" font-size="13" fill="#6b7280">a consistent view</text>
+  <text x="350" y="304" text-anchor="middle" font-size="13" fill="#6b7280">Trustworthy, but</text>
+  <text x="350" y="322" text-anchor="middle" font-size="13" fill="#6b7280">still detailed</text>
+
+  <line x1="445" y1="230" x2="485" y2="230" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Gold -->
+  <rect x="490" y="70" width="180" height="320" rx="10" fill="#fff7ed" stroke="#ffedd5" stroke-width="1"/>
+  <circle cx="580" cy="110" r="7" fill="#eab308"/>
+  <text x="580" y="140" text-anchor="middle" font-size="18" font-weight="600" fill="#111827">Gold</text>
+  <text x="580" y="164" text-anchor="middle" font-size="13" fill="#6b7280">Business-ready</text>
+  <text x="580" y="200" text-anchor="middle" font-size="13" fill="#6b7280">Aggregated and</text>
+  <text x="580" y="218" text-anchor="middle" font-size="13" fill="#6b7280">summarized</text>
+  <text x="580" y="252" text-anchor="middle" font-size="13" fill="#6b7280">Shaped for a</text>
+  <text x="580" y="270" text-anchor="middle" font-size="13" fill="#6b7280">specific dashboard</text>
+  <text x="580" y="304" text-anchor="middle" font-size="13" fill="#6b7280">Used directly by</text>
+  <text x="580" y="322" text-anchor="middle" font-size="13" fill="#6b7280">BI &amp; analysts</text>
+
+  <text x="350" y="450" text-anchor="middle" font-size="13" fill="#9ca3af">All three layers physically live in S3 — Delta Lake adds the transaction log starting at Silver/Gold</text>
+</svg>
