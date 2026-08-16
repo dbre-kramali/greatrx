@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="GreatRxCompact" name="GreatRx Compact ERD">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1"/>
+
+        <!-- PATIENT -->
+        <mxCell id="patient" value="patient&#xa;PK patient_id&#xa;mrn&#xa;first_name&#xa;last_name&#xa;date_of_birth&#xa;gender&#xa;phone&#xa;email" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1">
+          <mxGeometry x="40" y="40" width="180" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- DOCTOR -->
+        <mxCell id="doctor" value="doctor&#xa;PK doctor_id&#xa;npi&#xa;first_name&#xa;last_name&#xa;specialty&#xa;clinic_name" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1">
+          <mxGeometry x="260" y="40" width="180" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- ENCOUNTER -->
+        <mxCell id="encounter" value="encounter&#xa;PK encounter_id&#xa;FK patient_id&#xa;FK doctor_id&#xa;encounter_date&#xa;encounter_type&#xa;reason&#xa;status" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1">
+          <mxGeometry x="140" y="240" width="220" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- PRESCRIPTION -->
+        <mxCell id="prescription" value="prescription&#xa;PK prescription_id&#xa;rx_number&#xa;FK patient_id&#xa;FK doctor_id&#xa;written_date&#xa;status&#xa;notes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1">
+          <mxGeometry x="40" y="460" width="220" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- PRESCRIPTION ITEM -->
+        <mxCell id="prescription_item" value="prescription_item&#xa;PK item_id&#xa;FK prescription_id&#xa;FK drug_id&#xa;dosage&#xa;frequency&#xa;duration_days&#xa;route&#xa;instructions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1">
+          <mxGeometry x="280" y="460" width="240" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- DRUG -->
+        <mxCell id="drug" value="drug&#xa;PK drug_id&#xa;rxnorm_code&#xa;name&#xa;strength&#xa;form&#xa;manufacturer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1">
+          <mxGeometry x="540" y="460" width="200" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- PAYER -->
+        <mxCell id="payer" value="payer&#xa;PK payer_id&#xa;payer_name&#xa;payer_type&#xa;phone&#xa;address" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#4d79ff;" vertex="1">
+          <mxGeometry x="540" y="40" width="200" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- CLAIM -->
+        <mxCell id="claim" value="claim&#xa;PK claim_id&#xa;FK encounter_id&#xa;FK payer_id&#xa;claim_number&#xa;claim_date&#xa;total_amount&#xa;status&#xa;notes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e2f0d9;strokeColor=#70ad47;" vertex="1">
+          <mxGeometry x="540" y="240" width="240" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- CLAIM LINE -->
+        <mxCell id="claim_line" value="claim_line&#xa;PK claim_line_id&#xa;FK claim_id&#xa;cpt_code&#xa;description&#xa;quantity&#xa;charge_amount&#xa;allowed_amount&#xa;status" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fde9d9;strokeColor=#c55a11;" vertex="1">
+          <mxGeometry x="800" y="240" width="240" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- PAYMENT -->
+        <mxCell id="payment" value="payment&#xa;PK payment_id&#xa;FK claim_id&#xa;payment_date&#xa;paid_amount&#xa;adjustment_amount&#xa;patient_responsibility&#xa;payment_method&#xa;reference_number" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d9e1f2;strokeColor=#2f5597;" vertex="1">
+          <mxGeometry x="800" y="460" width="240" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- RELATIONSHIPS -->
+        <mxCell id="rel1" edge="1" source="patient" target="encounter" style="endArrow=block;strokeColor=#000000;"/>
+        <mxCell id="rel2" edge="1" source="doctor" target="encounter" style="endArrow=block;strokeColor=#000000;"/>
+        <mxCell id="rel3" edge="1" source="encounter" target="prescription" style="endArrow=block;strokeColor=#000000;"/>
+        <mxCell id="rel4" edge="1" source="prescription" target="prescription_item" style="endArrow=block;strokeColor=#000000;"/>
+        <mxCell id="rel5" edge="1" source="drug" target="prescription_item" style="endArrow=block;strokeColor=#000000;"/>
+        <mxCell id="rel6" edge="1" source="encounter" target="claim" style="endArrow=block;strokeColor=#000000;"/>
+        <mxCell id="rel7" edge="1" source="payer" target="claim" style="endArrow=block;strokeColor=#000000;"/>
+        <mxCell id="rel8" edge="1" source="claim" target="claim_line" style="endArrow=block;strokeColor=#000000;"/>
+        <mxCell id="rel9" edge="1" source="claim" target="payment" style="endArrow=block;strokeColor=#000000;"/>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
