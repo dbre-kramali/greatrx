@@ -69,5 +69,4 @@ Three checkpoints:
 
 > All three medallion layers physically live in S3 — Delta Lake's
 > transaction log is what gets added starting at the Silver stage. See
-> [`PROJECT_OVERVIEW.md`](./PROJECT_OVERVIEW.md) for how this maps to
-> the actual pipeline.
+> [`README.md`](./README.md) for how this maps to the actual pipeline.
